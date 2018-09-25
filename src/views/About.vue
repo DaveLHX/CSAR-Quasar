@@ -1,4 +1,6 @@
 <template>
+<section>
+ <h4>Start of About.vue</h4>
   <q-page padding>
    <!--
   16 characters max.
@@ -8,7 +10,7 @@
 <q-field
   :count="16"
 >
-  <q-input type="password" max-length="16" v-model="model" />
+  <q-input type="password" max-length="16"  />
 </q-field>
 
 <!-- Counting Chips. Notice "count" property -->
@@ -18,7 +20,7 @@
   helper="Some helper here"
   :label-width="3"
 >
-  <q-chips-input float-label="Float Label" v-model="model" />
+  <q-chips-input float-label="Float Label" />
 </q-field>
 
 <!-- Counting selected options -->
@@ -62,14 +64,23 @@
   rows="7"
 /><!-- max-height refers to pixels -->
 <temp-component></temp-component>
-
+<grid-component></grid-component>
   </q-page>
+   <h4>End of About.vue</h4>
+  </section>
 </template>
 
 <script>
 import TempComponent from "@/components/TempComponent";
+import GridComponent from "@/components/GridComponent";
 export default {
   name: "PageAbout",
-  components: { TempComponent }
+  components: { TempComponent, GridComponent },
+  data() {
+    return {
+      text: "some text",
+      select: ""
+    };
+  }
 };
 </script>
