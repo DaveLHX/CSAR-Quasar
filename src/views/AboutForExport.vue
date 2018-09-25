@@ -22,6 +22,8 @@
     Replace ".mat" with ".ios" for the iOS theme.
     Add ".rtl" for the RTL support (example: quasar.mat.rtl.min.css).
   -->
+  <link href="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/quasar.mat.min.css" rel="stylesheet" type="text/css">
+
 
   <!-- Do you want IE support? Replace "0.17.8" with your desired Quasar version -->
   <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/quasar.ie.polyfills.umd.min.js"></script>
