@@ -55,9 +55,10 @@
     -->
     <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.8/dist/umd/icons.fontawesome.umd.min.js"></script>
 
-
+<q-page padding>
  <temp-component></temp-component>
 <grid-component></grid-component>
+</q-page>
 <h4>end of AboutForExport.vue</h4>
 </section> 
 </template>

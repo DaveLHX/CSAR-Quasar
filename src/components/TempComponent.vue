@@ -10,14 +10,7 @@
   <q-tab slot="title" name="tab-5" icon="build" />
 
   <!-- Targets -->
-  <q-tab-pane name="tab-1">Tab One</q-tab-pane>
-  <q-tab-pane name="tab-2">Tab Two</q-tab-pane>
-  <q-tab-pane name="tab-3">Tab Three</q-tab-pane>
-  <q-tab-pane name="tab-4">Tab Four</q-tab-pane>
-  <q-tab-pane name="tab-5">Tab Five</q-tab-pane>
-</q-tabs>
-
-<q-option-group
+  <q-tab-pane name="tab-1"><q-option-group
   type="radio"
   v-model="group"
   :options="[
@@ -25,15 +18,22 @@
     { label: 'Option 2', value: 'op2', color: 'secondary' },
     { label: 'Option 3', value: 'op3', color: 'amber' }
   ]"/>  
-<q-datetime  type="datetime" label="Selected a time"/>
-  <q-knob
-
-  :min="min"
+  {{group}}</q-tab-pane>
+  <q-tab-pane name="tab-2"></q-tab-pane>
+  <q-tab-pane name="tab-3"> <q-knob  :min="min" v-model="knobValue"
   :max="max"
   color="red"
-/>
+/> Selected value :{{knobValue}}</q-tab-pane>
+  <q-tab-pane name="tab-4"><q-datetime  type="datetime" label="Selected a time"/></q-tab-pane>
+  <q-tab-pane name="tab-5"><select v-model="selected">
+  <!-- inline object literal -->
+  <option v-bind:value="{ number: 123 }">123</option>
+</select>
+<p>Selected value is {{selected}}</p>
+</q-tab-pane>
+</q-tabs>
+ 
 <q-btn icon="fas fa-plus-circle" color="primary" label="New item" />
-
   <h6>===End of TempComponent.vue</h6>
 </section>
 </template>
@@ -45,7 +45,11 @@ export default {
     return {
       // `v-model` binded to `group`,
       // which must be a String when using radios
-      group: "opt1"
+      group: "opt1",
+      knobValue: 0,
+      selected: [],
+      max: 100,
+      min: 30
     };
   },
   created() {

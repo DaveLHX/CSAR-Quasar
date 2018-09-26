@@ -6,8 +6,18 @@
     title="Table Title"
     :data="comments"
     :columns="columns"
+      :filter="filter"
     row-key="id"
-  />
+  >
+  <template slot="top-left" slot-scope="props">
+      <q-search
+        hide-underline
+        color="secondary"
+        v-model="filter"
+        class="col-6"
+      />
+    </template>
+  </q-table>
      <h6>===End of GridComponent.vue</h6>
 </section>
 
@@ -66,7 +76,8 @@ export default {
           // classes: 'my-class',
           // style: 'width: 500px'
         }
-      ]
+      ],
+      filter: ""
     };
   },
   created() {
